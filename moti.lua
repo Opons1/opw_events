@@ -292,7 +292,7 @@ if core.get_modpath("technic") then
         output = "opw_events:battery_motillusion",
         recipe = {
             {"opw_events:motillusion", "lumpblocks:sulfur_block", "opw_events:motillusion"},
-            {"opw_events:motillusion", "opw_events:block_motillusion", "opw_events:motillusion"},
+            {"birthstones:amethyst", "opw_events:block_motillusion", "birthstones:amethyst"},
             {"opw_events:motillusion", "technic:sulfur_block", "opw_events:motillusion"}
         }
     })
