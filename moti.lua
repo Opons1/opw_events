@@ -284,7 +284,7 @@ if core.get_modpath("technic") then
         output = "opw_events:battery_motillusion",
         recipe = {
             {"opw_events:motillusion", "technic:sulfur_block", "opw_events:motillusion"},
-            {"opw_events:motillusion", "opw_events:block_motillusion", "opw_events:motillusion"},
+            {"birthstones:amethyst", "opw_events:block_motillusion", "birthstones:amethyst"},
             {"opw_events:motillusion", "technic:sulfur_block", "opw_events:motillusion"}
         }
     })
@@ -300,9 +300,9 @@ if core.get_modpath("technic") then
     core.register_craft({
         output = "opw_events:staff_motillusion",
         recipe = {
-            {"default:steel_ingot", "opw_events:block_motillusion", "default:steel_ingot"},
-            {"default:steel_ingot", "opw_events:battery_motillusion", "default:steel_ingot"},
-            {"default:steel_ingot", "opw_events:battery_motillusion", "default:steel_ingot"}
+            {"replacer:replacer_technic", "opw_events:block_motillusion", "default:steelblock"},
+            {"myblueprint:chalk", "opw_events:battery_motillusion", "opw_events:multitool_motillusion"},
+            {"birthstones:rubyblock", "opw_events:battery_motillusion", "moreores:mithril_block"}
         }
     })
 end
