@@ -1,0 +1,4 @@
+textures i need to make
+opw_events_inv_helmet_motillusion.png
+opw_events_helmet_motillusion_preview.png
+opw_events_helmet_motillusion.png
