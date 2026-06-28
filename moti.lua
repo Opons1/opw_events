@@ -477,7 +477,7 @@ local safetoreplace = {
     ["opw_events:motillusion_ghostblock_unpointable_permanent"] = true
 }
 --mode one:just place blocks like myblueprint chalk
-opw_events.moti.add_builder_mode("blueprint_simple", {
+opw_events.moti.add_builder_mode("Blueprint", {
 
     on_place = function(itemstack, placer, pointed_thing)
         if pointed_thing.type ~= "node" then
@@ -495,7 +495,7 @@ opw_events.moti.add_builder_mode("blueprint_simple", {
 })
 
 --copy and paste
-opw_events.moti.add_builder_mode("copy_and_paste", {
+opw_events.moti.add_builder_mode("Copy and Paste", {
     --selecting the area
     on_use = function(itemstack, placer, pointed_thing)
         local playername = placer:get_player_name()
@@ -622,6 +622,7 @@ opw_events.moti.add_builder_mode("copy_and_paste", {
                             end
                         else
                             core.set_node(pos, {name = "opw_events:motillusion_ghostblock_unpointable"})
+                            nodes_placed = nodes_placed + 1
                         end
                     end
                     num = num + 1
@@ -634,7 +635,7 @@ opw_events.moti.add_builder_mode("copy_and_paste", {
     end
 })
 --randomplace
-opw_events.moti.add_builder_mode("randomplace", {
+opw_events.moti.add_builder_mode("Randomplace", {
 
     on_place = function(itemstack, placer, pointed_thing)
         local playername = placer:get_player_name()
