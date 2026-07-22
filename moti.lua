@@ -225,8 +225,9 @@ core.register_tool("opw_events:multitool_motillusion", {
 })
 
 --STAIRS
-stairs.register_all("motillusion_block", "opw_events:block_motillusion", {cracky = 4, level = 3}, {"block_motillusion.png"}, "Motillusion", default.node_sound_glass_defaults(), true)
-
+if stairs and stairs.register_all then
+    stairs.register_all("motillusion_block", "opw_events:block_motillusion", {cracky = 4, level = 3}, {"block_motillusion.png"}, "Motillusion", default.node_sound_glass_defaults(), true)
+end
 --RECIPES
 local mat = "opw_events:motillusion"
 local rod = "basic_materials:steel_bar"
@@ -524,9 +525,10 @@ opw_events.moti.add_builder_mode("Copy and Paste", {
             local corner1 = {}
             local corner2 = {}
             --check if the area is too big
-            if math.abs(pos1.x - pos2.x) > 8 or
-               math.abs(pos1.y - pos2.y) > 8 or
-               math.abs(pos1.z - pos2.z) > 8 then
+            local volume = math.abs(pos1.x - pos2.x) * math.abs(pos1.y - pos2.y) * math.abs(pos1.z - pos2.z)
+            if math.abs(pos1.x - pos2.x) > 32 or
+               math.abs(pos1.y - pos2.y) > 32 or
+               math.abs(pos1.z - pos2.z) > 32 or volume > 512 then
                 core.chat_send_player(playername, "Area is too big!")
                 meta:set_int("copy_and_paste_step", 0)
                 return itemstack
@@ -703,9 +705,10 @@ opw_events.moti.add_builder_mode("Fill", {
             local pos1 = core.string_to_pos(meta:get_string("fill_pos1"))
             local pos2 = pointed_thing.under
             --check if the area is too big
-            if math.abs(pos1.x - pos2.x) > 8 or
-               math.abs(pos1.y - pos2.y) > 8 or
-               math.abs(pos1.z - pos2.z) > 8 then
+            local volume = math.abs(pos1.x - pos2.x) * math.abs(pos1.y - pos2.y) * math.abs(pos1.z - pos2.z)
+            if math.abs(pos1.x - pos2.x) > 32 or
+               math.abs(pos1.y - pos2.y) > 32 or
+               math.abs(pos1.z - pos2.z) > 32 or volume > 1024 then
                 core.chat_send_player(playername, "Area is too big!")
                 meta:set_string("fill_pos1", "")
                 meta:set_int("fill_step", 0)
